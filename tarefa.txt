@@ -1,0 +1,13 @@
+tarefas:
+
+    - criar secret  repository keys para a produção, alterando o nome do app de produção
+
+    - Criar um banco de dados mongodb teste localmente para a branch de dev e uma teste remoto para homologação e produção
+
+    - Configurar as variávei de ambiente no arquivo .env e configurar as variaveis de ambiente na heroku 
+
+
+
+Anotações:
+
+ - A ação de trigger de merge é criado utilizando o push para a branch de destino, pois ao realizar o merge é criado um comentário na branch de destino
