@@ -8,9 +8,16 @@ load_dotenv()
 app = Flask(__name__)
 
 MONGO_URI = os.getenv("MONGO_URI")
+DATABASE_NAME = os.getenv("DATABASE_NAME")
+
+if not MONGO_URI:
+    raise RuntimeError("A variável de ambiente MONGO_URI não está definida!")
+
+if not DATABASE_NAME:
+    raise RuntimeError("A variável de ambiente DATABASE_NAME não está definida!")
 
 client = MongoClient(MONGO_URI)
-db = client["contract_dev"]  # Substitua pelo nome do seu banco
+db = client[DATABASE_NAME]  # Substitua pelo nome do seu banco
 
 @app.route("/")
 def home():
